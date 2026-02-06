@@ -1,26 +1,151 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Reset + full height fix */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Full screen background */
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6a85ff, #8b5cf6);
+}
+
+/* Card */
+.card {
+  background: white;
+  padding: 50px 60px;
+  border-radius: 20px;
+  text-align: center;
+  width: 380px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.6s ease;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Heart icon */
+.logo {
+  font-size: 56px;
+  margin-bottom: 15px;
+  animation: heartbeat 1.6s infinite;
+  text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+}
+
+/* Question text */
+.card h1 {
+  font-size: 22px;
+  margin-bottom: 35px;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Buttons container */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  position: relative;
+}
+
+/* Buttons base */
+button {
+  padding: 12px 26px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* YES button */
+button.yes {
+  background-color: #22c55e;
+  color: white;
+}
+
+button.yes:hover {
+  transform: scale(1.15);
+  background-color: #16a34a;
+}
+
+/* NO button */
+button.no {
+  background-color: #ef4444;
+  color: white;
+  position: relative;
+}
+
+button.no:hover {
+  background-color: #dc2626;
+}
+
+/* Message text */
+.message {
+  margin-top: 25px;
+  font-size: 16px;
+  color: #555;
+  animation: popIn 0.4s ease;
+}
+
+/* Final YES message */
+.message.big {
+  font-size: 22px;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.15);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
