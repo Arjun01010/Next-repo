@@ -18,7 +18,7 @@ export default function Home() {
 
   const handleYes = () => {
     setAnsweredYes(true);
-    setMessage("🎉 Ayushi You did it! Thanks for choosing YES.");
+    setMessage("🎉 test msg");
   };
 
   const handleNo = () => {
