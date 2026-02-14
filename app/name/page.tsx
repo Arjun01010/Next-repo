@@ -21,7 +21,7 @@ export default function NamePage() {
   return (
     <main className="container">
       <div className="card">
-        <div className="logo">Logo</div>
+        <div className="logo">♥️</div>
 
         <h1>What’s your name?</h1>
 
