@@ -19,7 +19,7 @@ export default function Home() {
 
   const handleYes = () => {
     setAnsweredYes(true);
-    setMessage("🎉 test msg");
+    setMessage("🎉 Yey thanks my babay");
   };
 
   const handleNo = () => {
@@ -51,11 +51,11 @@ export default function Home() {
         ) : (
           <>
           <Link href='/logo'>
-            <button className="logo" onClick={handleLogoClick}>LOGO</button>
+            <button className="logo" onClick={handleLogoClick}>♥️</button>
 
           </Link>
 
-            <h1>Will you be my valor ?</h1>
+            <h1>Will you be my valentine ?</h1>
 
             <div className="buttons">
               <button className="yes" onClick={handleYes}>
